@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 public class ApiBibliotecaApplication {
 
 	@Bean
+	/*cria uma maneira de permitir ao spring boot saber que quando um ModelMapper de nome
+	 * model for requisitado por injeção de dependencia então instanciar esse model abaixo*/
 	public ModelMapper model() {
 		
 		return new ModelMapper();

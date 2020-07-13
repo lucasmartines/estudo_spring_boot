@@ -1,9 +1,12 @@
 package br.com.martinesdev.library.api.exceptions;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.validation.BindingResult;
+
+import br.com.martinesdev.library.exceptions.BusinessException;
 
 public class ApiErrors {
  
@@ -16,6 +19,10 @@ public class ApiErrors {
 			.forEach( e -> errors.add( e.getDefaultMessage() ));
 	}
 	
+	public ApiErrors(BusinessException e) {
+		errors =  Arrays.asList( e .getMessage() );
+	}
+
 	public List<String> getErrors(){
 		return errors;
 	}
